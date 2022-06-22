@@ -1,4 +1,4 @@
-# rest-json-quickstart Project
+#   Ship World
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
