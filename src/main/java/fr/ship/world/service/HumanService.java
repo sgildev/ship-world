@@ -1,34 +1,40 @@
-package fr.ship.world.service;
+package fr.ship.world.service;  // Dossier du projet
 
+import fr.ship.world.pojo.Human; // Importation de la class Human dans le pojo
 
-import fr.ship.world.pojo.Human;
-
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.Set;
+import javax.enterprise.context.ApplicationScoped; // C'est pour charger la classe
+import javax.inject.Inject; // C'est pour récuperer le service ou on le souhaite
+import java.util.Collections; // une liste
+import java.util.LinkedHashMap; // Lié liste et la synchronisé
+import java.util.Set; // importer liste de la collection
 
 import org.jboss.logging.Logger;
 
-@ApplicationScoped
-public class HumanService {
+@ApplicationScoped // Annotations pour les objets injectés
+public class HumanService {    // classe HumanService
     @Inject
     Logger logger;
 
+    private Set<Human> humans = Collections.newSetFromMap(Collections.synchronizedMap(new LinkedHashMap<>())); // liste humans
 
-    private Set<Human> humans = Collections.newSetFromMap(Collections.synchronizedMap(new LinkedHashMap<>()));
 
     public HumanService() {
-        humans.add(new Human("toto", "male", "alien"));
-        humans.add(new Human("tata", "female", "martien"));
-        humans.add(new Human("titi", "male", "earthlings "));
+        humans.add(new Human("toto", "male", "human", 18));
+        humans.add(new Human("tata", "female", "martien", 300));
+        humans.add(new Human("titi", "male", "hobbit", 400));
     }
 
+    public boolean deleteWrongHuman(Human human) {
+        String race = human.getRace();
+        int years = human.getYears();
 
-    public void msg() {
-        logger.info("tata");
+        if (race == "humans" && years <= 18 || race != "humans" && years >= 256) {
+            return true;
+        } else {
+            return false;
+        }
     }
+
 
     public Set<Human> list() {
         return humans;

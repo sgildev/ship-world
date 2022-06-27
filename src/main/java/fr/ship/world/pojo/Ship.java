@@ -7,23 +7,19 @@ import java.util.List;
 public class Ship {
     private String name;
     private String description;
-    private int NumberOfPassengers;
+    private int numberOfPassengers;
     private String color;
-
     private List<Human> humans = new ArrayList<>();
 
-
-
-
-
     public Ship() {
+
 
     }
 
     public Ship(String name, String description, int numberOfPassenger, String color) {
         this.name = name;
         this.description = description;
-        this.NumberOfPassengers = numberOfPassenger;
+        this.numberOfPassengers = numberOfPassenger;
         this.color = color;
     }
 
@@ -36,14 +32,14 @@ public class Ship {
     }
 
     public int getNumberofPassanger() {
-        return NumberOfPassengers;
+        return numberOfPassengers;
     }
 
     public String getColor() {
         return color;
     }
 
-    public List<Human> getFruits() {
+    public List<Human> getHumans() {
         return humans;
     }
 
@@ -56,7 +52,7 @@ public class Ship {
     }
 
     public void setNumberDePasanger(int numberOfPassenger) {
-        this.NumberOfPassengers = numberOfPassenger;
+        this.numberOfPassengers = numberOfPassenger;
     }
 
     public void setColor(String color) {
@@ -68,5 +64,5 @@ public class Ship {
     }
 
 
-    }
+}
 
