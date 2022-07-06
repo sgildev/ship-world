@@ -3,6 +3,7 @@ package fr.ship.world.resource;
 import fr.ship.world.pojo.Human;
 import fr.ship.world.service.HumanService;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -12,6 +13,8 @@ import java.util.Set;
 
 @Path("/humans")
 public class HumanResource {
+
+    @ApplicationScoped
 
     @Inject
     HumanService humanService;

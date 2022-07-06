@@ -13,7 +13,6 @@ import java.util.Set;
 @Path("/ships")
 public class ShipResource {
 
-
     @Inject
     ShipService shipService;
 

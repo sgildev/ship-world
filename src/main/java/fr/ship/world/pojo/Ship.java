@@ -27,8 +27,16 @@ public class Ship {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getDescription() {
         return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getNumberofPassanger() {
@@ -39,28 +47,20 @@ public class Ship {
         return color;
     }
 
-    public List<Human> getHumans() {
-        return humans;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setNumberDePasanger(int numberOfPassenger) {
-        this.numberOfPassengers = numberOfPassenger;
-    }
-
     public void setColor(String color) {
         this.color = color;
     }
 
+    public List<Human> getHumans() {
+        return humans;
+    }
+
     public void setHumans(List<Human> humans) {
         this.humans = humans;
+    }
+
+    public void setNumberDePasanger(int numberOfPassenger) {
+        this.numberOfPassengers = numberOfPassenger;
     }
 
 
